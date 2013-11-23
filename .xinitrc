@@ -1,0 +1,1 @@
+/home/jae/.xinitrc

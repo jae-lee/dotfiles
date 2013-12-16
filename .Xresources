@@ -14,7 +14,8 @@ URxvt.transparent: true
 URxvt.shading: 10
 #include "/home/jae/.colors/astromouse"
 
-URxvt.font: xft:Sauce Code Powerline:size=10
+URxvt.font: xft:Sauce Code Powerline:size=10, \
+            xft:PowerlineSymbols:style=Medium:size=10
 
 URxvt.scrollBar: false
 URxvt.perl-ext-common:  default,matcher

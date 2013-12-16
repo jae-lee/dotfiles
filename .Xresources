@@ -2,20 +2,20 @@
 URxvt.loginshell: true
 URxvt.cursorColor: #d13a82
 URxvt.imLocale: en_US.UTF-8
+! URxvt.background: #1c1c1c
+! URxvt.foreground: #dedede
 
 ! Padding
 URxvt.internalBorder:20
 URxvt.externalBorder:0
 
 ! Color scheme
-URxvt.background: #191716
-URxvt.foreground: #DEDEDE
-URxvt.transparent: true
-URxvt.shading: 10
-#include "/home/jae/.colors/astromouse"
+URxvt.transparent: false
+URxvt.shading: 40
+#include "/home/jae/.colors/solarized"
 
-URxvt.font: xft:Source Code Pro:size=10:antialias=false, \ 
-            xft:DejaVu Sans Mono for Powerline:size=10:style=Book:antialias=false, \
+URxvt.font: xft:Inconsolata:size=11:antialias=false, \
+            xft:DejaVu Sans Mono for Powerline:size=9:style=Book:antialias=false, \
             xft:Arial:style=Regular:antialias=false, \
             xft:FreeSerif:style=Regular:antialias=false, \
             xft:unifont:style=Medium:antialias=false

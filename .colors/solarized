@@ -42,7 +42,7 @@
 ! To only apply colors to your terminal, for example, prefix
 ! the color assignment statement with its name. Example:
 !
-! URxvt*background:            S_base03
+URxvt*background:            S_base03
 
 *background:              S_base03
 *foreground:              S_base0

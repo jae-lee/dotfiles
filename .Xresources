@@ -2,20 +2,32 @@
 URxvt*loginShell: true
 URxvt.cursorColor: #d13a82
 URxvt.imLocale: en_US.UTF-8
+! URxvt.background: #1c1c1c
+! URxvt.foreground: #dedede
 
 ! Padding
 URxvt.internalBorder:20
 URxvt.externalBorder:0
 
 ! Color scheme
-URxvt.background: #191716
-URxvt.foreground: #DEDEDE
-URxvt.transparent: true
-URxvt.shading: 10
-#include "/home/jae/.colors/astromouse"
+URxvt.transparent: false
+URxvt.shading: 40
+#include "/home/jae/.colors/solarized"
 
+<<<<<<< HEAD
 URxvt.font: xft:Sauce Code Powerline:size=10, \
             xft:PowerlineSymbols:style=Medium:size=10
+=======
+URxvt.font: xft:Inconsolata:size=11:antialias=false, \
+            xft:DejaVu Sans Mono for Powerline:size=9:style=Book:antialias=false, \
+            xft:Arial:style=Regular:antialias=false, \
+            xft:FreeSerif:style=Regular:antialias=false, \
+            xft:unifont:style=Medium:antialias=false
+! Urxvt.font: -*-ohsnap.icons-medium-*-normal-*-13-*-*-*-*-*-*-*
+! URxvt.font: -*-proggyclean-medium-r-normal-*-13-*-*-*-*-*-*-*
+! URxvt.font: -*-tamsynmod-medium-*-normal-*-14-*-*-*-*-*-*-*
+! URxvt.font: -*-ohsnap-medium-*-*-*-14-*-*-*-*-*-*-*
+>>>>>>> 577be670c1105c4e5d49235f95cc21d3badea7c2
 
 URxvt.scrollBar: false
 URxvt.perl-ext-common:  default,matcher

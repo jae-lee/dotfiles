@@ -1,5 +1,5 @@
 ! URxvt
-URxvt.loginshell: true
+URxvt*loginShell: true
 URxvt.cursorColor: #d13a82
 URxvt.imLocale: en_US.UTF-8
 ! URxvt.background: #1c1c1c
@@ -26,7 +26,7 @@ URxvt.font: xft:Inconsolata:size=11:antialias=false, \
 
 URxvt.scrollBar: false
 URxvt.perl-ext-common:  default,matcher
-URxvt.url-launcher:      /usr/bin/chromium
+URxvt.url-launcher:      /usr/bin/firefox
 URxvt.matcher.button:   1
 
 ! Xft settings

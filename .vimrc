@@ -1,3 +1,15 @@
+" Backspace deletes like most programs in insert mode
+set expandtab shiftwidth=2 softtabstop=2
+
+" Make lines of code shorter than 80
+set colorcolumn=80
+
+" Use Vim settings, rather then Vi settings
+set nocompatible  
+
+" No swap file
+set noswapfile
+
 " Map jk to leave insert mode instead of <Esc>
 inoremap jk <ESC>
 
@@ -27,3 +39,9 @@ map <C-l> <C-W>l
 " More natural split opening
 set splitbelow
 set splitright
+
+" NERDTree map to gt
+nmap gt :NERDTreeToggle<CR>
+
+" Line numbers
+set nu

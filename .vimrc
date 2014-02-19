@@ -2,7 +2,7 @@
 set expandtab shiftwidth=2 softtabstop=2
 
 " Make lines of code shorter than 80
-set colorcolumn=80
+set cc=80
 
 " Use Vim settings, rather then Vi settings
 set nocompatible  

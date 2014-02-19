@@ -45,3 +45,13 @@ nmap gt :NERDTreeToggle<CR>
 
 " Line numbers
 set nu
+
+" Lightline
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"":""}',
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }

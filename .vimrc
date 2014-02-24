@@ -1,3 +1,8 @@
+" Pathogen
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+execute pathogen#infect()
+
 " Colorscheme
 colorscheme softblue
 
@@ -22,9 +27,6 @@ let mapleader = ","
 filetype plugin indent on
 syntax on
 set encoding=utf-8
-
-" For Pathogen plugins
-execute pathogen#infect()
 
 " Setting tab/indent sizes
 set smartindent

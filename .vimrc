@@ -1,5 +1,5 @@
 " Colorscheme
-colorscheme kellys
+colorscheme softblue
 
 " Backspace deletes like most programs in insert mode
 set expandtab shiftwidth=2 softtabstop=2
@@ -51,7 +51,7 @@ set nu
 
 " Lightline
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'wombat',
       \ 'component': {
       \   'readonly': '%{&readonly?"":""}',
       \ },

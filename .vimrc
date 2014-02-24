@@ -1,3 +1,7 @@
+" Colorscheme
+colorscheme molokai
+let g:molokai_original = 1
+
 " Backspace deletes like most programs in insert mode
 set expandtab shiftwidth=2 softtabstop=2
 

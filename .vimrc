@@ -4,7 +4,8 @@ call pathogen#helptags()
 execute pathogen#infect()
 
 " Colorscheme
-colorscheme softblue
+colorscheme base16-default
+set background=dark
 
 " Backspace deletes like most programs in insert mode
 set expandtab shiftwidth=2 softtabstop=2

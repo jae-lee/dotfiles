@@ -1,11 +1,8 @@
 " Pathogen
-call pathogen#incubate()
-call pathogen#helptags()
 execute pathogen#infect()
 
 " Colorscheme
-colorscheme base16-default
-set background=dark
+colorscheme base16-mocha
 
 " Backspace deletes like most programs in insert mode
 set expandtab shiftwidth=2 softtabstop=2
@@ -25,6 +22,7 @@ inoremap jk <ESC>
 " Map the leader key to something more accessible rather than \
 let mapleader = ","
 
+" General good stuff
 filetype plugin indent on
 syntax on
 set encoding=utf-8

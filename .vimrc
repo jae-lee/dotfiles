@@ -52,7 +52,7 @@ set nu
 
 " Lightline
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'solarized',
       \ 'component': {
       \   'readonly': '%{&readonly?"":""}',
       \ },

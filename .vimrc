@@ -2,7 +2,8 @@
 execute pathogen#infect()
 
 " Colorscheme
-colorscheme base16-mocha
+colorscheme base16-paraiso
+set background=dark
 
 " Backspace deletes like most programs in insert mode
 set expandtab shiftwidth=2 softtabstop=2
@@ -26,6 +27,7 @@ let mapleader = ","
 filetype plugin indent on
 syntax on
 set encoding=utf-8
+set nu " line numbers
 
 " Setting tab/indent sizes
 set smartindent
@@ -47,15 +49,3 @@ set splitright
 " NERDTree map to gt
 nmap gt :NERDTreeToggle<CR>
 
-" Line numbers
-set nu
-
-" Lightline
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ 'component': {
-      \   'readonly': '%{&readonly?"":""}',
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
-      \ }

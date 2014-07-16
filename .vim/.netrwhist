@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/Users/jae/.config/fish'
 let g:netrw_dirhist_2='/Users/jae/.bin/web-page-redesign'
 let g:netrw_dirhist_3='/Users/jae/rails_projects/patternlab-php-master/source/_patterns/00-atoms/01-global'
 let g:netrw_dirhist_4='/Users/jae/.config/fish'
+let g:netrw_dirhist_5='/Users/jae/rails_projects/fffc-donation-engine/.git'

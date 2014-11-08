@@ -2,7 +2,7 @@
 execute pathogen#infect()
 
 " Colorscheme
-colorscheme base16-ocean
+colorscheme base16-flat
 set background=dark
 
 " Backspace deletes like most programs in insert mode
@@ -49,6 +49,8 @@ set splitright
 
 " Keybindings
 nmap gt :NERDTreeToggle<CR>
+nmap gs :Gstatus<CR>
+nmap gc :Gcommit<CR>
 nmap <F8> :TagbarToggle<CR>
 
 " Better Rainbow Parentheses
@@ -56,6 +58,7 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+let g:rbpt_max = 6
 
 " add a space between the comment delimiter and text
 let NERDSpaceDelims=1

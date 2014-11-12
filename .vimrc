@@ -1,5 +1,5 @@
 " Colorscheme
-colorscheme base16-flat
+colorscheme base16-mocha
 set background=dark
 
 " Backspace deletes like most programs in insert mode

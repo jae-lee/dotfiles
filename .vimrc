@@ -1,6 +1,3 @@
-" Pathogen
-execute pathogen#infect()
-
 " Colorscheme
 colorscheme base16-flat
 set background=dark
@@ -11,11 +8,25 @@ set expandtab shiftwidth=2 softtabstop=2
 " Make lines of code shorter than 80
 set cc=80
 
-" Use Vim settings, rather than Vi settings
-set nocompatible  
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set noswapfile                " No swap file
 
-" No swap file
-set noswapfile
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Plugins
+Plugin 'gmarik/Vundle.vim'
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'kien/ctrlp.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
 
 " Map jk to leave insert mode instead of <Esc>
 inoremap jk <ESC>

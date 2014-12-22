@@ -124,9 +124,15 @@ function! emmet#isExpandable() abort
   return len(part) > 0
 endfunction
 
+<<<<<<< HEAD
 function! emmet#mergeConfig(lhs, rhs) abort
   let [lhs, rhs] = [a:lhs, a:rhs]
   if type(lhs) ==# 3 && type(rhs) ==# 3
+=======
+function! emmet#mergeConfig(lhs, rhs)
+  let [lhs, rhs] = [a:lhs, a:rhs]
+  if type(lhs) == 3 && type(rhs) == 3
+>>>>>>> 37e57b7af447c1645cf8628c8b29ab3ffd7eca04
     let lhs += rhs
     if len(lhs)
       call remove(lhs, 0, len(lhs)-1)
@@ -134,14 +140,24 @@ function! emmet#mergeConfig(lhs, rhs) abort
     for rhi in rhs
       call add(lhs, rhs[rhi])
     endfor
+<<<<<<< HEAD
   elseif type(lhs) ==# 4 && type(rhs) ==# 4
     for key in keys(rhs)
       if type(rhs[key]) ==# 3
+=======
+  elseif type(lhs) == 4 && type(rhs) == 4
+    for key in keys(rhs)
+      if type(rhs[key]) == 3
+>>>>>>> 37e57b7af447c1645cf8628c8b29ab3ffd7eca04
         if !has_key(lhs, key)
           let lhs[key] = []
         endif
         let lhs[key] += rhs[key]
+<<<<<<< HEAD
       elseif type(rhs[key]) ==# 4
+=======
+      elseif type(rhs[key]) == 4
+>>>>>>> 37e57b7af447c1645cf8628c8b29ab3ffd7eca04
         if has_key(lhs, key)
           call emmet#mergeConfig(lhs[key], rhs[key])
         else
@@ -300,7 +316,11 @@ function! emmet#getResource(type, name, default) abort
     endif
     for ext in extends
       if has_key(s:emmet_settings, ext) && has_key(s:emmet_settings[ext], a:name)
+<<<<<<< HEAD
         if type(ret) ==# 3 || type(ret) ==# 4
+=======
+        if type(ret) == 3 || type(ret) == 4
+>>>>>>> 37e57b7af447c1645cf8628c8b29ab3ffd7eca04
           call emmet#mergeConfig(ret, s:emmet_settings[ext][a:name])
         else
           let ret = s:emmet_settings[ext][a:name]
@@ -310,7 +330,11 @@ function! emmet#getResource(type, name, default) abort
   endif
 
   if has_key(s:emmet_settings[a:type], a:name)
+<<<<<<< HEAD
     if type(ret) ==# 3 || type(ret) ==# 4
+=======
+    if type(ret) == 3 || type(ret) == 4
+>>>>>>> 37e57b7af447c1645cf8628c8b29ab3ffd7eca04
       call emmet#mergeConfig(ret, s:emmet_settings[a:type][a:name])
     else
       let ret = s:emmet_settings[a:type][a:name]
@@ -431,8 +455,13 @@ endfunction
 
 function! emmet#expandCursorExpr(expand, mode) abort
   let expand = a:expand
+<<<<<<< HEAD
   if expand !~# '\${cursor}'
     if a:mode ==# 2
+=======
+  if expand !~ '\${cursor}'
+    if a:mode == 2
+>>>>>>> 37e57b7af447c1645cf8628c8b29ab3ffd7eca04
       let expand = '${cursor}' . expand
     else
       let expand .= '${cursor}'
@@ -797,9 +826,15 @@ function! emmet#anchorizeURL(flag) abort
 
   let type = emmet#getFileType()
   let rtype = emmet#lang#exists(type) ? type : 'html'
+<<<<<<< HEAD
   if &filetype ==# 'markdown'
     let expand = printf('[%s](%s)', substitute(title, '[\[\]]', '\\&', 'g'), url)
   elseif a:flag ==# 0
+=======
+  if &ft == 'markdown'
+    let expand = printf("[%s](%s)", substitute(title, '[\[\]]', '\\&', 'g'), url)
+  elseif a:flag == 0
+>>>>>>> 37e57b7af447c1645cf8628c8b29ab3ffd7eca04
     let a = emmet#lang#html#parseTag('<a>')
     let a.attr.href = url
     let a.value = '{' . title . '}'

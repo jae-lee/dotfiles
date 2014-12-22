@@ -6,7 +6,11 @@ function! emmet#lang#slim#parseIntoTree(abbr, type) abort
   return emmet#lang#html#parseIntoTree(a:abbr, a:type)
 endfunction
 
+<<<<<<< HEAD
 function! emmet#lang#slim#toString(settings, current, type, inline, filters, itemno, indent) abort
+=======
+function! emmet#lang#slim#toString(settings, current, type, inline, filters, itemno, indent)
+>>>>>>> 37e57b7af447c1645cf8628c8b29ab3ffd7eca04
   let current = a:current
   let type = a:type
   let inline = a:inline

@@ -23,17 +23,18 @@ extract() {
     path="$(printf "$pack" | cut -d ':' -f 2)"
     dir="tmp/$(printf "$path" | cut -d '/' -f 2)"
     directories="DIRS$(printf "$pack" | cut -d ':' -f 3)"
+    subtree="$(printf "$pack" | cut -d ':' -f 4)"
     printf -- "- [$name](https://github.com/$path) ("
 
     subdirs=""
     for subdir in ${!directories}; do
-      if [ -d "$dir/$subdir" ]; then
+      if [ -d "${dir}${subtree:-/}${subdir}" ]; then
         base="$(basename "$subdir")"
         if [[ "$subdirs" != *"$base"* ]]; then
           subdirs="$subdirs, $base"
         fi
 
-        copy_dir "$dir" "$subdir"
+        copy_dir "${dir}${subtree}" "$subdir"
       fi
     done
 
@@ -45,8 +46,9 @@ extract() {
     name="$(printf "$pack" | cut -d ':' -f 1)"
     path="$(printf "$pack" | cut -d ':' -f 2)"
     dir="tmp/$(printf "$path" | cut -d '/' -f 2)"
+    subtree="$(printf "$pack" | cut -d ':' -f 4)"
 
-    if [ -d "$dir/plugin" ]; then
+    if [ -d "$dir${subtree:-/}plugin" ]; then
       printf "Possible error (plugin directory exists): $path\n"
     fi
   done
@@ -82,7 +84,7 @@ PACKS="
   elixir:elixir-lang/vim-elixir
   emberscript:heartsentwined/vim-ember-script
   emblem:heartsentwined/vim-emblem
-  erlang:oscarh/vimerl
+  erlang:hcs42/vim-erlang-runtime
   git:tpope/vim-git
   go:fatih/vim-go:_BASIC
   haml:tpope/vim-haml
@@ -106,6 +108,7 @@ PACKS="
   perl:vim-perl/vim-perl
   php:StanAngeloff/php.vim
   puppet:rodjek/vim-puppet
+  powershell:Persistent13/vim-ps1
   protobuf:uarun/vim-protobuf
   python:mitsuhiko/vim-python-combined
   r-lang:vim-scripts/R.vim
@@ -119,14 +122,17 @@ PACKS="
   systemd:kurayama/systemd-vim-syntax
   swift:toyamarinyon/vim-swift
   textile:timcharper/textile.vim
-  tmux:acustodioo/vim-tmux
+  tmux:tejr/vim-tmux
   tomdoc:duwanis/tomdoc.vim
   typescript:leafgarland/typescript-vim
   vbnet:vim-scripts/vbnet.vim
+  thrift:solarnz/thrift.vim
   toml:cespare/vim-toml
   twig:beyondwords/vim-twig
   xls:vim-scripts/XSLT-syntax
   yard:sheerun/vim-yardoc
+  vala:tkztmk/vim-vala
+  vm:lepture/vim-velocity
   css-color:ap/vim-css-color
 "
 

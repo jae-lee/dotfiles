@@ -144,6 +144,10 @@ endfunction
 autocmd BufReadPost *.pl,*.pm,*.t call s:DetectPerl6()
 autocmd BufNew,BufRead *.nqp setf perl6
 autocmd BufNewFile,BufRead *.proto setfiletype proto
+au BufNewFile,BufRead   *.ps1   set ft=ps1
+au BufNewFile,BufRead   *.psd1  set ft=ps1
+au BufNewFile,BufRead   *.psm1  set ft=ps1
+au BufNewFile,BufRead   *.ps1xml   set ft=ps1xml
 au! BufRead,BufNewFile *.pp setfiletype puppet
 au! BufRead,BufNewFile Puppetfile setfiletype ruby
 function! s:setf(filetype) abort
@@ -195,8 +199,12 @@ au BufNewFile,BufRead *.swap      set filetype=systemd
 au BufNewFile,BufRead *.target    set filetype=systemd
 au BufNewFile,BufRead *.timer     set filetype=systemd
 au BufRead,BufNewFile *.textile set filetype=textile
-autocmd BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
+au BufNewFile,BufRead *.thrift setlocal filetype=thrift
+autocmd BufNewFile,BufRead {.,}tmux.conf{.*,} setlocal filetype=tmux
 autocmd BufNewFile,BufRead *.toml set filetype=toml
 autocmd BufNewFile,BufRead *.twig set filetype=twig
 autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+autocmd BufRead *.vala,*.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
+au BufRead,BufNewFile *.vala,*.vapi setfiletype vala
+au BufRead,BufNewFile *.vm set ft=velocity syntax=velocity

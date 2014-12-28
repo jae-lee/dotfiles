@@ -1,5 +1,5 @@
 " Colorscheme
-colorscheme base16-mocha
+"colorscheme base16-mocha
 "set background=dark
 
 " Backspace deletes like most programs in insert mode
@@ -27,7 +27,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mattn/emmet-vim'
-Plugin 'edkolev/tmuxline.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'nathanaelkane/vim-indent-guides'
 

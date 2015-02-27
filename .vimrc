@@ -32,6 +32,11 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+" Awesome indents ✿*ﾟ¨ﾟ✎･ ✿.｡.:* *.:｡✿*ﾟ¨ﾟ✎･✿.｡.:* ✿*ﾟ¨ﾟ✎･ ✿.｡.:*
+" =============================================================================
+set list
+set listchars=tab:>·,trail:·,extends:…,precedes:…,nbsp:&
+
 " Keybindings ✿*ﾟ¨ﾟ✎･ ✿.｡.:* *.:｡✿*ﾟ¨ﾟ✎･✿.｡.:* ✿*ﾟ¨ﾟ✎･ ✿.｡.:*
 " =============================================================================
 nmap gt :NERDTreeToggle<CR>

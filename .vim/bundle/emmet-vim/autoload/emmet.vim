@@ -1,7 +1,7 @@
 "=============================================================================
 " emmet.vim
 " Author: Yasuhiro Matsumoto <mattn.jp@gmail.com>
-" Last Change: 17-Dec-2014.
+" Last Change: 21-Feb-2015.
 
 let s:save_cpo = &cpoptions
 set cpoptions&vim
@@ -124,15 +124,9 @@ function! emmet#isExpandable() abort
   return len(part) > 0
 endfunction
 
-<<<<<<< HEAD
 function! emmet#mergeConfig(lhs, rhs) abort
   let [lhs, rhs] = [a:lhs, a:rhs]
   if type(lhs) ==# 3 && type(rhs) ==# 3
-=======
-function! emmet#mergeConfig(lhs, rhs)
-  let [lhs, rhs] = [a:lhs, a:rhs]
-  if type(lhs) == 3 && type(rhs) == 3
->>>>>>> 37e57b7af447c1645cf8628c8b29ab3ffd7eca04
     let lhs += rhs
     if len(lhs)
       call remove(lhs, 0, len(lhs)-1)
@@ -140,24 +134,14 @@ function! emmet#mergeConfig(lhs, rhs)
     for rhi in rhs
       call add(lhs, rhs[rhi])
     endfor
-<<<<<<< HEAD
   elseif type(lhs) ==# 4 && type(rhs) ==# 4
     for key in keys(rhs)
       if type(rhs[key]) ==# 3
-=======
-  elseif type(lhs) == 4 && type(rhs) == 4
-    for key in keys(rhs)
-      if type(rhs[key]) == 3
->>>>>>> 37e57b7af447c1645cf8628c8b29ab3ffd7eca04
         if !has_key(lhs, key)
           let lhs[key] = []
         endif
         let lhs[key] += rhs[key]
-<<<<<<< HEAD
       elseif type(rhs[key]) ==# 4
-=======
-      elseif type(rhs[key]) == 4
->>>>>>> 37e57b7af447c1645cf8628c8b29ab3ffd7eca04
         if has_key(lhs, key)
           call emmet#mergeConfig(lhs[key], rhs[key])
         else
@@ -316,11 +300,7 @@ function! emmet#getResource(type, name, default) abort
     endif
     for ext in extends
       if has_key(s:emmet_settings, ext) && has_key(s:emmet_settings[ext], a:name)
-<<<<<<< HEAD
         if type(ret) ==# 3 || type(ret) ==# 4
-=======
-        if type(ret) == 3 || type(ret) == 4
->>>>>>> 37e57b7af447c1645cf8628c8b29ab3ffd7eca04
           call emmet#mergeConfig(ret, s:emmet_settings[ext][a:name])
         else
           let ret = s:emmet_settings[ext][a:name]
@@ -330,11 +310,7 @@ function! emmet#getResource(type, name, default) abort
   endif
 
   if has_key(s:emmet_settings[a:type], a:name)
-<<<<<<< HEAD
     if type(ret) ==# 3 || type(ret) ==# 4
-=======
-    if type(ret) == 3 || type(ret) == 4
->>>>>>> 37e57b7af447c1645cf8628c8b29ab3ffd7eca04
       call emmet#mergeConfig(ret, s:emmet_settings[a:type][a:name])
     else
       let ret = s:emmet_settings[a:type][a:name]
@@ -455,13 +431,8 @@ endfunction
 
 function! emmet#expandCursorExpr(expand, mode) abort
   let expand = a:expand
-<<<<<<< HEAD
   if expand !~# '\${cursor}'
     if a:mode ==# 2
-=======
-  if expand !~ '\${cursor}'
-    if a:mode == 2
->>>>>>> 37e57b7af447c1645cf8628c8b29ab3ffd7eca04
       let expand = '${cursor}' . expand
     else
       let expand .= '${cursor}'
@@ -651,9 +622,9 @@ function! emmet#expandAbbr(mode, abbr) range abort
     let expand = emmet#unescapeDollarExpr(expand)
     if a:mode ==# 2 && visualmode() ==# 'v'
       if a:firstline ==# a:lastline
-        let expand = substitute(expand, '\n\s*', '', 'g')
+        let expand = substitute(expand, '[\r\n]\s*', '', 'g')
       else
-        let expand = substitute(expand, '\n$', '', 'g')
+        let expand = substitute(expand, '[\n]$', '', 'g')
       endif
       silent! normal! gv
       let col = col('''<')
@@ -673,14 +644,14 @@ function! emmet#expandAbbr(mode, abbr) range abort
       else
         let indent = ''
       endif
-      let expand = substitute(expand, '\n\s*$', '', 'g')
+      let expand = substitute(expand, '[\r\n]\s*$', '', 'g')
       if emmet#useFilter(filters, 's')
-        let epart = substitute(expand, "\n\s\*", '', 'g')
+        let epart = substitute(expand, '[\r\n]\s\*', '', 'g')
       else
-        let epart = substitute(expand, "\n", "\n" . indent, 'g')
+        let epart = substitute(expand, '[\r\n]', "\n" . indent, 'g')
       endif
       let expand = line[:-len(part)-1] . epart . rest
-      let lines = split(expand, "\n", 1)
+      let lines = split(expand, '[\r\n]', 1)
       if a:mode ==# 2
         silent! exe 'normal! gvc'
       endif
@@ -826,15 +797,9 @@ function! emmet#anchorizeURL(flag) abort
 
   let type = emmet#getFileType()
   let rtype = emmet#lang#exists(type) ? type : 'html'
-<<<<<<< HEAD
   if &filetype ==# 'markdown'
     let expand = printf('[%s](%s)', substitute(title, '[\[\]]', '\\&', 'g'), url)
   elseif a:flag ==# 0
-=======
-  if &ft == 'markdown'
-    let expand = printf("[%s](%s)", substitute(title, '[\[\]]', '\\&', 'g'), url)
-  elseif a:flag == 0
->>>>>>> 37e57b7af447c1645cf8628c8b29ab3ffd7eca04
     let a = emmet#lang#html#parseTag('<a>')
     let a.attr.href = url
     let a.value = '{' . title . '}'
@@ -964,7 +929,6 @@ let s:emmet_settings = {
 \      'lang': "en",
 \      'locale': "en-US",
 \      'charset': "UTF-8",
-\      'indentation': "\t",
 \      'newline': "\n",
 \      'use_selection': 0,
 \    },
@@ -1672,7 +1636,8 @@ let s:emmet_settings = {
 \            'ins': {'datetime': '${datetime}'},
 \            'link:css': [{'rel': 'stylesheet'}, g:emmet_html5 ? {} : {'type': 'text/css'}, {'href': '|style.css'}, {'media': 'all'}],
 \            'link:print': [{'rel': 'stylesheet'}, g:emmet_html5 ? {} : {'type': 'text/css'}, {'href': '|print.css'}, {'media': 'print'}],
-\            'link:import': [{'rel': 'import'}, {'href': ''}],
+\            'link:import': [{'rel': 'import'}, {'href': '|.html'}],
+\            'link:im': [{'rel': 'import'}, {'href': '|.html'}],
 \            'link:favicon': [{'rel': 'shortcut icon'}, {'type': 'image/x-icon'}, {'href': '|favicon.ico'}],
 \            'link:touch': [{'rel': 'apple-touch-icon'}, {'href': '|favicon.png'}],
 \            'link:rss': [{'rel': 'alternate'}, {'type': 'application/rss+xml'}, {'title': 'RSS'}, {'href': '|rss.xml'}],
@@ -1804,6 +1769,7 @@ let s:emmet_settings = {
 \        'block_elements': 'address,applet,blockquote,button,center,dd,del,dir,div,dl,dt,fieldset,form,frameset,hr,iframe,ins,isindex,li,link,map,menu,noframes,noscript,object,ol,p,pre,script,table,tbody,td,tfoot,th,thead,tr,ul,h1,h2,h3,h4,h5,h6',
 \        'inline_elements': 'a,abbr,acronym,applet,b,basefont,bdo,big,br,button,cite,code,del,dfn,em,font,i,iframe,img,input,ins,kbd,label,map,object,q,s,samp,script,select,small,span,strike,strong,sub,sup,textarea,tt,u,var',
 \        'empty_element_suffix': g:emmet_html5 ? '>' : ' />',
+\        'indent_blockelement': 0,
 \    },
 \    'htmldjango': {
 \        'extends': 'html',
@@ -1848,6 +1814,10 @@ let s:emmet_settings = {
 \        'expandos': {
 \            'choose': 'xsl:choose>xsl:when+xsl:otherwise',
 \        }
+\    },
+\    'jsx': {
+\        'extends': 'html',
+\        'attribute_name': {'class': 'className'},
 \    },
 \    'xslt': {
 \        'extends': 'xsl',

@@ -11,7 +11,6 @@ function! s:DetectCoffee()
     endif
 endfunction
 autocmd BufNewFile,BufRead * call s:DetectCoffee()
-au BufRead,BufNewFile *.csv,*.dat,*.tsv,*.tab set filetype=csv
 autocmd BufNewFile,BufReadPost *.feature,*.story set filetype=cucumber
 au BufNewFile,BufRead Dockerfile set filetype=dockerfile
 au BufRead,BufNewFile *.eex set filetype=eelixir
@@ -29,11 +28,11 @@ autocmd FileType ember-script set tabstop=2|set shiftwidth=2|set expandtab
 autocmd BufNewFile,BufRead *.emblem set filetype=emblem
 autocmd FileType emblem set tabstop=2|set shiftwidth=2|set expandtab
 autocmd BufNewFile,BufRead *.git/{,modules/**/}{COMMIT_EDIT,TAG_EDIT,MERGE_,}MSG set ft=gitcommit
-autocmd BufNewFile,BufRead *.git/config,.gitconfig,.gitmodules set ft=gitconfig
-autocmd BufNewFile,BufRead */.config/git/config                set ft=gitconfig
-autocmd BufNewFile,BufRead *.git/modules/**/config             set ft=gitconfig
-autocmd BufNewFile,BufRead git-rebase-todo                     set ft=gitrebase
-autocmd BufNewFile,BufRead .gitsendemail.*                     set ft=gitsendemail
+autocmd BufNewFile,BufRead *.git/config,.gitconfig,gitconfig,.gitmodules set ft=gitconfig
+autocmd BufNewFile,BufRead */.config/git/config                          set ft=gitconfig
+autocmd BufNewFile,BufRead *.git/modules/**/config                       set ft=gitconfig
+autocmd BufNewFile,BufRead git-rebase-todo                               set ft=gitrebase
+autocmd BufNewFile,BufRead .gitsendemail.*                               set ft=gitsendemail
 autocmd BufNewFile,BufRead *.git/**
       \ if getline(1) =~ '^\x\{40\}\>\|^ref: ' |
       \   set ft=git |
@@ -86,6 +85,7 @@ augroup END
 au BufNewFile,BufRead *.ejs		set filetype=jst
 au BufNewFile,BufRead *.jst  		set filetype=jst
 au BufNewFile,BufRead *.hamljs set filetype=jst
+au BufNewFile,BufRead *.ect set filetype=jst
 autocmd BufNewFile,BufRead *.less setf less
 au BufNewFile,BufRead *.liquid					set ft=liquid
 au BufNewFile,BufRead */_layouts/*.html,*/_includes/*.html	set ft=liquid
@@ -178,14 +178,15 @@ au BufNewFile,BufRead [Bb]uildfile		call s:setf('ruby')
 au BufNewFile,BufRead Appraisals		call s:setf('ruby')
 au BufNewFile,BufRead Podfile,*.podspec		call s:setf('ruby')
 au BufRead,BufNewFile *.rs set filetype=rust
-au BufRead,BufNewFile *.sbt set filetype=sbt
+au BufRead,BufNewFile *.sbt set filetype=sbt.scala
 fun! s:DetectScala()
     if getline(1) == '#!/usr/bin/env scala'
         set filetype=scala
     endif
 endfun
-au BufRead,BufNewFile *.scala,*.sbt set filetype=scala
+au BufRead,BufNewFile *.scala set filetype=scala
 au BufRead,BufNewFile * call s:DetectScala()
+au BufRead,BufNewFile *.sbt setfiletype sbt.scala
 autocmd BufNewFile,BufRead *.slim set filetype=slim
 autocmd BufNewFile,BufReadPost *.styl set filetype=stylus
 autocmd BufNewFile,BufReadPost *.stylus set filetype=stylus
@@ -202,6 +203,7 @@ au BufRead,BufNewFile *.textile set filetype=textile
 au BufNewFile,BufRead *.thrift setlocal filetype=thrift
 autocmd BufNewFile,BufRead {.,}tmux.conf{.*,} setlocal filetype=tmux
 autocmd BufNewFile,BufRead *.toml set filetype=toml
+autocmd BufNewFile,BufRead Cargo.lock set filetype=toml
 autocmd BufNewFile,BufRead *.twig set filetype=twig
 autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript

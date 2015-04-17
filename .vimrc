@@ -68,6 +68,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'mattn/emmet-vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'lervag/vimtex'
 
 call vundle#end()
 

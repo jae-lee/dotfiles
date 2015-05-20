@@ -28,6 +28,9 @@ set nu
 set relativenumber
 set t_Co=256
 
+" Save when losing focus of vim
+au FocusLost * silent! wa
+
 " Setting tab/indent sizes
 set smartindent
 set tabstop=2

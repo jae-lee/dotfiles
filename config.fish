@@ -21,3 +21,6 @@ if status --is-login
   set GOPATH $HOME/go
   set PATH $PATH $GOPATH/bin
 end
+
+# Aliases
+alias brewup="brew update; brew cask update; brew upgrade --all; brew cleanup; brew cask cleanup"

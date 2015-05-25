@@ -122,6 +122,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'lervag/vimtex'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'bling/vim-airline'
+Plugin 'vim-scripts/SearchComplete'
 
 call vundle#end()
 

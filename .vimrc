@@ -26,7 +26,9 @@ syntax on
 set encoding=utf-8
 set nu
 set relativenumber
-set t_Co=256
+
+" Vim will treat numbers with leading zeros as decimals, not octal
+set nrformats=
 
 " Save when losing focus of vim
 au FocusLost * silent! wa

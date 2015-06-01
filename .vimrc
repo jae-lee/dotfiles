@@ -125,6 +125,8 @@ Plugin 'lervag/vimtex'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'bling/vim-airline'
 Plugin 'vim-scripts/SearchComplete'
+Plugin 'kana/vim-textobj-user'
+Plugin 'kana/vim-textobj-entire'
 
 call vundle#end()
 

@@ -6,6 +6,7 @@
 [core]
 	autocrlf = input
 	safecrlf = true
+	editor = /usr/bin/vim
 
 [alias]
 	co = checkout

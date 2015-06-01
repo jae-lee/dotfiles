@@ -10,6 +10,7 @@ set fish_path $HOME/.oh-my-fish
 Theme "gnuykeaj"
 
 Plugin "tmux"
+Plugin "localhost"
 
 if status --is-login
   set PATH $PATH /usr/local/bin /usr/bin /bin $HOME/bin $HOME/.rbenv/bin

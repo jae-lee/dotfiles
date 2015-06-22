@@ -83,9 +83,6 @@ endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
-" set shell
-set shell=/usr/bin/zsh
-
 " Awesome indents ✿*ﾟ¨ﾟ✎･ ✿.｡.:* *.:｡✿*ﾟ¨ﾟ✎･✿.｡.:* ✿*ﾟ¨ﾟ✎･ ✿.｡.:*✿*ﾟ¨ﾟ✎･✿.｡.:*✿
 " =============================================================================
 set list
@@ -96,6 +93,7 @@ set listchars=tab:>·,trail:·,extends:…,precedes:…,nbsp:&
 nmap gt :NERDTreeToggle<CR>
 nmap gs :Gstatus<CR>
 nmap gc :Gcommit<CR>
+nmap gb :Gblame<CR>
 nmap <F8> :TagbarToggle<CR>
 
 " Move between vim windows with <ctrl> + <h,j,k,l>

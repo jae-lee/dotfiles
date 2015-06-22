@@ -47,7 +47,7 @@ endif
 
 " Dark background
 set background=dark
-colorscheme base16-paraiso
+colorscheme base16-ocean
 
 " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
 " http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
@@ -84,7 +84,7 @@ endfunction
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 " set shell
-set shell=/usr/local/bin/zsh
+set shell=/usr/bin/zsh
 
 " Awesome indents ✿*ﾟ¨ﾟ✎･ ✿.｡.:* *.:｡✿*ﾟ¨ﾟ✎･✿.｡.:* ✿*ﾟ¨ﾟ✎･ ✿.｡.:*✿*ﾟ¨ﾟ✎･✿.｡.:*✿
 " =============================================================================

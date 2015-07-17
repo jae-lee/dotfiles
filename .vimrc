@@ -47,7 +47,7 @@ endif
 
 " Dark background
 set background=dark
-colorscheme base16-ocean
+colorscheme base16-bright
 
 " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
 " http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users

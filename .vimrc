@@ -46,8 +46,9 @@ if exists('$TMUX')
 endif
 
 " Dark background
-set background=dark
-colorscheme base16-bright
+" set background=dark
+let g:hybrid_use_Xresources = 1
+colorscheme hybrid
 
 " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
 " http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
@@ -116,12 +117,14 @@ Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
 Plugin 'mattn/emmet-vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'lervag/vimtex'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'bling/vim-airline'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/SearchComplete'
 Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-entire'

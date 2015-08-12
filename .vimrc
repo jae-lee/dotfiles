@@ -1,31 +1,25 @@
-" General Settings ✿*ﾟ¨ﾟ✎･ ✿.｡.:* *.:｡✿*ﾟ¨ﾟ✎･✿.｡.:* ✿*ﾟ¨ﾟ✎･ ✿.｡.:*✿*ﾟ¨ﾟ✎･✿.｡.:*
-" =============================================================================
-" Make lines of code shorter than 80
-set cc=80
+" #############################################################################
+" General Settings
 
-" Disable compatibility
-set nocompatible
-
-" No swap file
-set noswapfile
-
-" Map jk to leave insert mode instead of <Esc>
-inoremap jk <ESC>
-
-" Map the leader key to something more accessible rather than \
-let mapleader = ","
-
-" More natural split opening
-set splitbelow
-set splitright
-
-" General good stuff
 filetype plugin on
 filetype plugin indent on
 syntax on
 set encoding=utf-8
 set nu
 set relativenumber
+set cc=80
+set nocompatible
+set noswapfile
+
+" More natural split opening
+set splitbelow
+set splitright
+
+" Map jk to leave insert mode instead of <Esc>
+inoremap jk <ESC>
+
+" Map the leader key to something more accessible rather than \
+let mapleader = ","
 
 " Vim will treat numbers with leading zeros as decimals, not octal
 set nrformats=
@@ -39,16 +33,17 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-" Fix colorscheme background
-" http://tangosource.com/blog/a-tmux-crash-course-tips-and-tweaks/
-if exists('$TMUX')
-  set term=screen-256color
-endif
+" #############################################################################
+" Colorscheme
 
-" Dark background
 " set background=dark
 let g:hybrid_use_Xresources = 1
 colorscheme hybrid
+
+" Fix colorscheme background http://is.gd/Df5cT7
+if exists('$TMUX')
+  set term=screen-256color
+endif
 
 " tmux will only forward escape sequences to the terminal if surrounded by a DCS sequence
 " http://sourceforge.net/mailarchive/forum.php?thread_name=AANLkTinkbdoZ8eNR1X2UobLTeww1jFrvfJxTMfKSq-L%2B%40mail.gmail.com&forum_name=tmux-users
@@ -84,13 +79,15 @@ endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
-" Awesome indents ✿*ﾟ¨ﾟ✎･ ✿.｡.:* *.:｡✿*ﾟ¨ﾟ✎･✿.｡.:* ✿*ﾟ¨ﾟ✎･ ✿.｡.:*✿*ﾟ¨ﾟ✎･✿.｡.:*✿
-" =============================================================================
+" #############################################################################
+" Awesome indents
+
 set list
 set listchars=tab:>·,trail:·,extends:…,precedes:…,nbsp:&
 
-" Keybindings ✿*ﾟ¨ﾟ✎･ ✿.｡.:* *.:｡✿*ﾟ¨ﾟ✎･✿.｡.:* ✿*ﾟ¨ﾟ✎･ ✿.｡.:*✿*ﾟ¨ﾟ✎･ ✿.｡.:*" *.
-" =============================================================================
+" #############################################################################
+" Keybindings
+
 nmap gt :NERDTreeToggle<CR>
 nmap gs :Gstatus<CR>
 nmap gc :Gcommit<CR>
@@ -104,8 +101,9 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" Vundle ✿*ﾟ¨ﾟ✎･ ✿.｡.:* *.:｡✿*ﾟ¨ﾟ✎･✿.｡.:* ✿*ﾟ¨ﾟ✎･ ✿.｡.:*✿*ﾟ¨ﾟ✎･ ✿.｡.:*" *.:｡✿*ﾟ
-" =============================================================================
+" #############################################################################
+" Vundle
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -131,8 +129,9 @@ Plugin 'kana/vim-textobj-entire'
 
 call vundle#end()
 
-" Misc ✿*ﾟ¨ﾟ✎･ ✿.｡.:* *.:｡✿*ﾟ¨ﾟ✎･✿.｡.:* ✿*ﾟ¨ﾟ✎･ ✿.｡.:*✿*ﾟ¨ﾟ✎･ ✿.｡.:*" *.:｡✿*ﾟ¨ﾟ
-" =============================================================================
+" #############################################################################
+" Misc
+
 " Better Rainbow Parentheses
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound

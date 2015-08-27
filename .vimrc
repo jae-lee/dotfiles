@@ -10,6 +10,7 @@ set relativenumber
 set cc=80
 set nocompatible
 set noswapfile
+set mouse=a
 
 " More natural split opening
 set splitbelow
@@ -126,6 +127,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/SearchComplete'
 Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-entire'
+Plugin 'rking/ag.vim'
 
 call vundle#end()
 

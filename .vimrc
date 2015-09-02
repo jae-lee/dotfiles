@@ -156,3 +156,6 @@ let g:airline_right_sep=''
 au BufReadPost *.hbs set syntax=mustache
 au BufReadPost *.emblem set syntax=emblem
 au BufReadPost *.coffee set syntax=coffee
+
+" CtrlP exclude files and directories
+set wildignore+=*/tmp/*,*/node_modules/*,*/bower_components/*,*.so,*.swp,*.zip

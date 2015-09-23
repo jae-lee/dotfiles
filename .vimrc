@@ -11,6 +11,7 @@ set cc=80
 set nocompatible
 set noswapfile
 set mouse=a
+set hidden
 
 " More natural split opening
 set splitbelow
@@ -108,8 +109,9 @@ map <C-l> <C-W>l
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Plugin 'Valloric/YouCompleteMe'
+Bundle 'lukaszkorecki/CoffeeTags'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'gmarik/Vundle.vim'
@@ -130,6 +132,7 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-scripts/SearchComplete'
+Plugin 'vim-scripts/restore_view.vim'
 
 call vundle#end()
 
@@ -159,3 +162,15 @@ au BufReadPost *.coffee set syntax=coffee
 
 " CtrlP exclude files and directories
 set wildignore+=*/tmp/*,*/node_modules/*,*/bower_components/*,*.so,*.swp,*.zip
+
+let g:tagbar_type_coffee = {
+    \ 'ctagstype' : 'coffee',
+    \ 'kinds'     : [
+        \ 'c:classes',
+        \ 'm:methods',
+        \ 'f:functions',
+        \ 'v:variables',
+        \ 'f:fields',
+    \ ]
+\ }
+

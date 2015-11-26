@@ -27,7 +27,7 @@ let mapleader = ","
 set nrformats=
 
 " Save when losing focus of vim
-au FocusLost * silent! wa
+" au FocusLost * silent! wa
 
 " Setting tab/indent sizes
 set smartindent
@@ -40,7 +40,7 @@ set expandtab
 
 " set background=dark
 let g:hybrid_use_Xresources = 1
-colorscheme hybrid
+colorscheme base16-bright
 
 " Fix colorscheme background http://is.gd/Df5cT7
 if exists('$TMUX')
@@ -156,9 +156,10 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 
 " Set syntax for filetypes
-au BufReadPost *.hbs set syntax=mustache
-au BufReadPost *.emblem set syntax=emblem
 au BufReadPost *.coffee set syntax=coffee
+au BufReadPost *.emblem set syntax=emblem
+au BufReadPost *.hbs set syntax=mustache
+au BufReadPost *.json set syntax=json
 
 " CtrlP exclude files and directories
 set wildignore+=*/tmp/*,*/node_modules/*,*/bower_components/*,*.so,*.swp,*.zip

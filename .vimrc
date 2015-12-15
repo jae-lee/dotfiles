@@ -20,6 +20,9 @@ set splitright
 " Map jk to leave insert mode instead of <Esc>
 inoremap jk <ESC>
 
+" Quick ag searching
+nnoremap \ :Ag<SPACE>
+
 " Map the leader key to something more accessible rather than \
 let mapleader = ","
 
@@ -38,9 +41,9 @@ set expandtab
 " #############################################################################
 " Colorscheme
 
-" set background=dark
+"set background=dark
 let g:hybrid_use_Xresources = 1
-colorscheme base16-bright
+colorscheme hybrid
 
 " Fix colorscheme background http://is.gd/Df5cT7
 if exists('$TMUX')
@@ -152,6 +155,18 @@ au BufReadPost *.coffee set syntax=coffee
 au BufReadPost *.emblem set syntax=emblem
 au BufReadPost *.hbs set syntax=mustache
 au BufReadPost *.json set syntax=json
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
 
 " CtrlP exclude files and directories
 set wildignore+=*/tmp/*,*/node_modules/*,*/bower_components/*,*.so,*.swp,*.zip

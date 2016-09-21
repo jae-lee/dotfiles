@@ -14,6 +14,7 @@ set mouse=a
 set hidden
 
 " More natural split opening
+" Opens new split panes to right and bottom, more natural than Vim's default
 set splitbelow
 set splitright
 
@@ -41,9 +42,8 @@ set expandtab
 " #############################################################################
 " Colorscheme
 
-"set background=dark
-let g:hybrid_use_Xresources = 1
-colorscheme hybrid
+set background=dark
+colorscheme base16-green-screen
 
 " Fix colorscheme background http://is.gd/Df5cT7
 if exists('$TMUX')
@@ -112,7 +112,7 @@ map <C-l> <C-W>l
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'bling/vim-airline'
+Plug 'chriskempson/base16-vim'
 Plug 'gmarik/Vundle.vim'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -126,6 +126,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/restore_view.vim'
 
 call plug#end()

@@ -183,3 +183,8 @@ let g:tagbar_type_coffee = {
     \ ]
 \ }
 
+" Tabular
+if exists(':Tabularize')
+  nmap <Leader>a, :Tabularize /,\zs/l0r1<CR>
+  vmap <Leader>a, :Tabularize /,\zs/l0r1<CR>
+endif

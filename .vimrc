@@ -40,11 +40,6 @@ set shiftwidth=2
 set expandtab
 
 " #############################################################################
-" Colorscheme
-
-set background=dark
-colorscheme base16-green-screen
-
 " Fix colorscheme background http://is.gd/Df5cT7
 if exists('$TMUX')
   set term=screen-256color
@@ -112,22 +107,17 @@ map <C-l> <C-W>l
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'chriskempson/base16-vim'
-Plug 'gmarik/Vundle.vim'
 Plug 'godlygeek/tabular'
+Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'mattn/emmet-vim'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/restore_view.vim'
 
 call plug#end()
@@ -145,11 +135,8 @@ let g:rbpt_max = 6
 " add a space between the comment delimiter and text
 let NERDSpaceDelims=1
 
-" vim-airline
-let g:airline_powerline_fonts = 1
+" Load lightline on start
 set laststatus=2
-let g:airline_left_sep=''
-let g:airline_right_sep=''
 
 " Set syntax for filetypes
 au BufReadPost *.coffee set syntax=coffee

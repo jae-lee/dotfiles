@@ -40,6 +40,8 @@ set shiftwidth=2
 set expandtab
 
 " #############################################################################
+" Colorscheme
+
 " Fix colorscheme background http://is.gd/Df5cT7
 if exists('$TMUX')
   set term=screen-256color
@@ -109,6 +111,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'itchyny/lightline.vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'mattn/emmet-vim'
@@ -118,6 +121,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'valloric/MatchTagAlways'
 Plug 'vim-scripts/restore_view.vim'
 
 call plug#end()
@@ -170,8 +174,20 @@ let g:tagbar_type_coffee = {
     \ ]
 \ }
 
+" MatchTagAlways
+let g:mta_filetypes = {
+  \ 'html' : 1,
+  \ 'html.handlebars' : 1,
+  \ 'xhtml' : 1,
+  \ 'xml' : 1,
+\ }
+
 " Tabular
 if exists(':Tabularize')
   nmap <Leader>a, :Tabularize /,\zs/l0r1<CR>
   vmap <Leader>a, :Tabularize /,\zs/l0r1<CR>
 endif
+
+" Save code folding
+autocmd BufWrite * mkview
+autocmd BufRead * silent loadview

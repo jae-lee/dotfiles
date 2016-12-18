@@ -1,23 +1,23 @@
 [user]
-	name = Jae Lee
-	email = jae@dustral.com
+  name = Jae Lee
+  email = jaelee@fastmail.com
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [core]
-	autocrlf = false
-	safecrlf = false
-	editor = /usr/bin/vim
+  autocrlf = false
+  safecrlf = false
+  editor = /usr/bin/vim
 
 [alias]
-	co = checkout
-	ci = commit
-	st = status
-	br = branch
-	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-	type = cat-file -t
-	dump = cat-file -p
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
 
 [github]
-	user = icarurs
+  user = jae-lee
 [push]
-	default = simple
+  default = simple

@@ -121,6 +121,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'valloric/MatchTagAlways'
 Plug 'vim-scripts/restore_view.vim'
+Plug 'xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 

@@ -1,12 +1,5 @@
-[user]
-  name = Jae Lee
-  email = jaelee@fastmail.com
-[credential]
-  helper = osxkeychain
 [core]
-  autocrlf = false
-  safecrlf = false
-  editor = /usr/bin/vim
+  editor = vim
 
 [alias]
   co = checkout
@@ -14,10 +7,10 @@
   st = status
   br = branch
   hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-  type = cat-file -t
-  dump = cat-file -p
 
-[github]
-  user = jae-lee
 [push]
   default = simple
+
+[user]
+  name = Jae Lee
+  email = jaelee@fastmail.com

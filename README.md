@@ -5,8 +5,10 @@
 1. zsh
 2. [Powerlevel10k](https://github.com/romkatv/powerlevel10k) shell theme
 3. tmux & tmuxinator
-4. VSCode
-5. [Fig](https://fig.io/)
+4. [Fig](https://fig.io/)
+5. IntelliJ
+6. GitHub CoPilot
+7. OpenAI ChatGPT
 
 ## IntelliJ setup
 

@@ -9,6 +9,7 @@
 5. IntelliJ
 6. GitHub CoPilot
 7. OpenAI ChatGPT
+8. [fzf](https://github.com/junegunn/fzf) installed using git, not homebrew.
 
 ## IntelliJ setup
 

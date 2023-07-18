@@ -16,5 +16,8 @@
 1. [Add `idea` script][script] to open IntelliJ from the command line.
 2. Install plugins:
    1. IdeaVIM
+   2. GitHub CoPilot
+   3. Indent Rainbow
+   4. Rainbow Brackets
 
 [script]: https://www.jetbrains.com/help/idea/working-with-the-ide-features-from-command-line.html#toolbox
